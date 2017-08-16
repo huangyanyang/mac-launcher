@@ -50,10 +50,10 @@
             msgCount: 999,
             isCategory: true,
             apps: [
-              {name: '携程', id: 5, icon: 'social-github', msgCount: 9, isCategory: false, apps: []},
-              {name: '去哪儿', id: 6, icon: 'social-twitter', msgCount: 9, isCategory: false, apps: []},
-              {name: '支付宝', id: 7, icon: 'social-linkedin-outline', msgCount: 9, isCategory: false, apps: []},
-              {name: '天猫', id: 8, icon: 'disc', msgCount: 9, isCategory: false, apps: []}
+              {name: '携程', id: 12, icon: 'social-github', msgCount: 9, isCategory: false, apps: []},
+              {name: '去哪儿', id: 13, icon: 'social-twitter', msgCount: 9, isCategory: false, apps: []},
+              {name: '支付宝', id: 14, icon: 'social-linkedin-outline', msgCount: 9, isCategory: false, apps: []},
+              {name: '天猫', id: 19, icon: 'disc', msgCount: 9, isCategory: false, apps: []}
             ]
           },
           {name: '唯品会', id: 13, icon: 'videocamera', msgCount: 11, isCategory: false, apps: []},
@@ -64,10 +64,10 @@
             msgCount: 999,
             isCategory: true,
             apps: [
-              {name: '携程', id: 5, icon: 'android-camera', msgCount: 9, isCategory: false, apps: []},
-              {name: '去哪儿', id: 6, icon: 'android-image', msgCount: 9, isCategory: false, apps: []},
-              {name: '支付宝', id: 7, icon: 'android-print', msgCount: 9, isCategory: false, apps: []},
-              {name: '天猫', id: 8, icon: 'social-instagram', msgCount: 9, isCategory: false, apps: []}
+              {name: '携程', id: 15, icon: 'android-camera', msgCount: 9, isCategory: false, apps: []},
+              {name: '去哪儿', id: 16, icon: 'android-image', msgCount: 9, isCategory: false, apps: []},
+              {name: '支付宝', id: 17, icon: 'android-print', msgCount: 9, isCategory: false, apps: []},
+              {name: '天猫', id: 18, icon: 'social-instagram', msgCount: 9, isCategory: false, apps: []}
             ]
           }
         ],

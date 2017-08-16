@@ -193,9 +193,6 @@
 //        console.log('mousePosition', mousePosition)
       },
       onMove (e) {
-        console.log('this.isMove before', this.isMove)
-        this.isMove = true
-        console.log('this.isMove after', this.isMove)
 //        let mousePosition = this.getMousePosition(e)
 //        console.log('move' + this.i)
         console.log('move')
@@ -236,58 +233,58 @@
         let mousePosition = this.getMousePosition()
         let isMouseInCol = this.isMouseInDiv('.noDrag', mousePosition)
         if (isMouseInCol.isMouseInDiv) {
-          let index
-          if (e.oldIndex === e.newIndex) {
-            index = e.oldIndex
-          } else {
-            index = e.newIndex
-          }
-          console.log(e.oldIndex, e.newIndex)
-          let appList = this.appList
-          let appListWithoutCategory = appList.slice(0)
-          let count = 0
-          for (let i = 0; i < appList.length; i++) {
-            if (appList[i].isCategory) {
-              appListWithoutCategory.splice(i - count, 1)
-              count++
-            }
-          }
-          console.log('index', index)
-          console.log('appListWithoutCategory', appListWithoutCategory)
-          let appIn = appListWithoutCategory[index]
-          console.log('在文件夹内')
-          console.log('appIn', appIn)
-          console.log('appList', appList)
-          let result = this.isMouseInDiv('.categoryDiv', mousePosition)
-          if (result.isMouseInDiv) {
-            this.categoryIndex = result.categoryDivIndex
-            for (let i = 0; i < appList.length; i++) {
-              if (appList[i].id === appIn.id) {
-                this.appList.splice(i, 1)
-              }
-            }
-            let count2 = 0
-            for (let i = 0; i < appList.length; i++) {
-              if (appList[i].isCategory) {
-                if (count2 === this.categoryIndex) {
-                  console.log('this.categoryIndex', this.categoryIndex)
-                  this.appList[i].apps.push(appIn)
-                  this.isMove = false
-                  console.log(appList)
-                }
-                count2++
-              }
-            }
-          } else {
-            let count3 = 0
-            for (let i = 0; i < appList.length; i++) {
-              if (appList[i].isCategory) {
-                if (count3 === isMouseInCol.categoryDivIndex) {
-                  let categoryX = JQuery(JQuery('.categoryDiv')[isMouseInCol.categoryDivIndex]).offset().left
-                  if (mousePosition.x < categoryX) {
-                    console.log('在文件夹左边')
-                    for (let y = 0; y < appList.length; y++) {
-                      if (appList[y].id === appIn.id) {
+//          let index
+//          if (e.oldIndex === e.newIndex) {
+//            index = e.oldIndex
+//          } else {
+//            index = e.newIndex
+//          }
+//          console.log(e.oldIndex, e.newIndex)
+//          let appList = this.appList
+//          let appListWithoutCategory = appList.slice(0)
+//          let count = 0
+//          for (let i = 0; i < appList.length; i++) {
+//            if (appList[i].isCategory) {
+//              appListWithoutCategory.splice(i - count, 1)
+//              count++
+//            }
+//          }
+//          console.log('index', index)
+//          console.log('appListWithoutCategory', appListWithoutCategory)
+//          let appIn = appListWithoutCategory[index]
+//          let result = this.isMouseInDiv('.categoryDiv', mousePosition)
+//          if (result.isMouseInDiv) {
+//            console.log('在文件夹内')
+//            this.categoryIndex = result.categoryDivIndex
+//            console.log('appIn', appIn)
+//            console.log('appList', appList)
+//            for (let i = 0; i < appList.length; i++) {
+//              if (appList[i].id === appIn.id) {
+//                this.appList.splice(i, 1)
+//              }
+//            }
+//            let count2 = 0
+//            for (let i = 0; i < appList.length; i++) {
+//              if (appList[i].isCategory) {
+//                if (count2 === this.categoryIndex) {
+//                  console.log('this.categoryIndex', this.categoryIndex)
+//                  this.appList[i].apps.push(appIn)
+//                  this.isMove = false
+//                  console.log(appList)
+//                }
+//                count2++
+//              }
+//            }
+//          } else {
+//            let count3 = 0
+//            for (let i = 0; i < appList.length; i++) {
+//              if (appList[i].isCategory) {
+//                if (count3 === isMouseInCol.categoryDivIndex) {
+//                  let categoryX = JQuery(JQuery('.categoryDiv')[isMouseInCol.categoryDivIndex]).offset().left
+//                  if (mousePosition.x < categoryX) {
+//                    console.log('在文件夹左边')
+//                    for (let y = 0; y < appList.length; y++) {
+//                      if (appList[y].id === appIn.id) {
 //                        if (y < i) {
 //                          this.appList.splice(i, 0, appIn)
 //                          this.appList.splice(y, 1)
@@ -295,12 +292,12 @@
 //                          this.appList.splice(y, 1)
 //                          this.appList.splice(i, 0, appIn)
 //                        }
-                      }
-                    }
-                  } else {
-                    console.log('在文件夹右边')
-                    for (let y = 0; y < appList.length; y++) {
-                      if (appList[y].id === appIn.id) {
+//                      }
+//                    }
+//                  } else {
+//                    console.log('在文件夹右边')
+//                    for (let y = 0; y < appList.length; y++) {
+//                      if (appList[y].id === appIn.id) {
 //                        if (y < i) {
 //                          this.appList.splice(i + 1, 0, appIn)
 //                          this.appList.splice(y, 1)
@@ -308,18 +305,17 @@
 //                          this.appList.splice(y, 1)
 //                          this.appList.splice(i + 1, 0, appIn)
 //                        }
-                      }
-                    }
-                  }
-                }
-                count3++
-              }
-            }
-          }
+//                      }
+//                    }
+//                  }
+//                }
+//                count3++
+//              }
+//            }
+//          }
         } else {
           console.log('在col外')
         }
-        this.isMove = false
 
         this.i = 1
       },
@@ -339,7 +335,9 @@
         let mouseX = mousePosition.x
         let mouseY = mousePosition.y
         let categoryDivs = JQuery(selecter)
+        console.log(categoryDivs)
         for (let i = 0; i < categoryDivs.length; i++) {
+          console.log(categoryDivs[i])
           let x = JQuery(categoryDivs[i]).offset().left
           let y = JQuery(categoryDivs[i]).offset().top
           let width = JQuery(categoryDivs[i]).width()
@@ -406,15 +404,7 @@
         return JSON.stringify(this.appList, null, 2)
       }
     },
-    watch: {
-//      isMove () {
-//        if (this.isMove) {
-//          JQuery('.noDrag').addClass('drag')
-//        } else {
-//          JQuery('.noDrag').removeClass('drag')
-//        }
-//      }
-    }
+    watch: {}
   }
 
 </script>

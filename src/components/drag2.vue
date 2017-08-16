@@ -112,9 +112,6 @@
           group: 'description',
           ghostClass: 'ghost'
         }
-      },
-      listString () {
-        return JSON.stringify(this.appList, null, 2)
       }
     },
     watch: {
